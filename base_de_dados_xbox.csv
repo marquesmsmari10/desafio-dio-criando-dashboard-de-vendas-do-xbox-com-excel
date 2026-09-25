@@ -1,0 +1,29 @@
+=== ABA 1: BASE DE DADOS BRUTOS (base.xlsx) ===;
+Data da Venda;Modelo;Região;Quantidade;Valor Unitário (R$);Faturamento Total (R$)
+05/01/2023;Xbox Series X;América do Norte;150;4500,00;"=D3*E3"
+12/01/2023;Xbox Series S;América Latina;300;2500,00;"=D4*E4"
+20/02/2023;Xbox Series X;Europa;120;4500,00;"=D5*E5"
+15/03/2023;Xbox One S;Ásia;80;1800,00;"=D6*E6"
+10/04/2023;Xbox Series S;América do Norte;450;2500,00;"=D7*E7"
+02/05/2023;Xbox Series X;América Latina;90;4500,00;"=D8*E8"
+;
+;
+=== ABA 2: DADOS AGREGADOS PARA O DASHBOARD ===;
+;
+MÉTRICAS GERAIS (KPIs);
+Total de Unidades Vendidas;"=SOMA(D3:D8)";
+Faturamento Global (R$);"=SOMA(F3:F8)";
+Ticket Médio Global (R$);"=MÉDIA(E3:E8)";
+;
+VENDAS POR MODELO (Para Gráfico de Rosca);
+Modelo;Unidades;Faturamento (R$)
+Xbox Series X;"=SOMASES(D3:D8;B3:B8;A17)";"=SOMASES(F3:F8;B3:B8;A17)"
+Xbox Series S;"=SOMASES(D3:D8;B3:B8;A18)";"=SOMASES(F3:F8;B3:B8;A18)"
+Xbox One S;"=SOMASES(D3:D8;B3:B8;A19)";"=SOMASES(F3:F8;B3:B8;A19)"
+;
+VENDAS POR REGIÃO (Para Gráfico de Barras);
+Região;Faturamento (R$)
+América do Norte;"=SOMASES(F3:F8;C3:C8;A23)"
+América Latina;"=SOMASES(F3:F8;C3:C8;A24)"
+Europa;"=SOMASES(F3:F8;C3:C8;A25)"
+Ásia;"=SOMASES(F3:F8;C3:C8;A26)"
